@@ -28,7 +28,7 @@ Option 2 — Node.js: npx serve .
 Option 3 — GitHub Pages:
 
 The demo is hosted directly from this repository at:
-https://postweb21.github.io/greenlightpa_demo_api/](https://helsesoft.github.io/greenliightpa-demo-api/
+https://postweb21.github.io/greenlightpa_demo_api/](https://helsesoft.github.io/greenlightpa-demo-api/
 
 
 JSON API Structure
