@@ -1,159 +1,572 @@
-{
-  "api_version": "1.0",
-  "data_source": "GreenLight PA — Helsesoft LLC",
-  "policy": {
-    "drug": {
-      "brand_name": "Dupixent",
-      "generic_name": "dupilumab",
-      "hcpcs_codes": ["J3590", "C9399"]
-    },
-    "indication": "Atopic Dermatitis",
-    "insurer": "Anthem BCBS",
-    "state": "CA",
-    "policy_number": "CC-0029",
-    "effective_date": "2025-09-10",
-    "last_revised": "2025-08-15",
-    "source_url": "https://www.anthem.com/content/dam/digital/docs/pharmacy-information/clinical-criteria/Dupixent.pdf"
-  },
-  "criteria": {
-    "initial_authorization": {
-      "logic": "ALL requirements must be met",
-      "requirements": [
-        {
-          "id": "IA-1",
-          "type": "age",
-          "label": "Minimum Age",
-          "required": true,
-          "detail": "Patient must be 6 months of age or older."
-        },
-        {
-          "id": "IA-2",
-          "type": "diagnosis",
-          "label": "Confirmed Diagnosis",
-          "required": true,
-          "detail": "Documented diagnosis of moderate to severe atopic dermatitis."
-        },
-        {
-          "id": "IA-3",
-          "type": "step_therapy",
-          "label": "Prior Treatment Requirement",
-          "required": true,
-          "logic": "ONE of the following must be documented",
-          "options": [
-            {
-              "id": "IA-3a",
-              "type": "failed_trial",
-              "label": "Topical Calcineurin Inhibitor",
-              "detail": "Failed trial of a topical calcineurin inhibitor (e.g., tacrolimus, pimecrolimus).",
-              "exception": false
-            },
-            {
-              "id": "IA-3b",
-              "type": "failed_trial",
-              "label": "Eucrisa (crisaborole)",
-              "detail": "Failed trial of Eucrisa.",
-              "exception": false
-            },
-            {
-              "id": "IA-3c",
-              "type": "failed_trial",
-              "label": "Opzelura (ruxolitinib cream)",
-              "detail": "Failed trial of Opzelura.",
-              "exception": false
-            },
-            {
-              "id": "IA-3d",
-              "type": "failed_trial",
-              "label": "Zoryve 0.15% Cream (roflumilast)",
-              "detail": "Failed trial of Zoryve 0.15% Cream.",
-              "exception": false
-            },
-            {
-              "id": "IA-3e",
-              "type": "failed_trial",
-              "label": "Vtama Cream (tapinarof)",
-              "detail": "Failed trial of Vtama Cream.",
-              "exception": false
-            },
-            {
-              "id": "IA-3f",
-              "type": "failed_trial",
-              "label": "Phototherapy (UVB or PUVA)",
-              "detail": "Failed trial of phototherapy.",
-              "exception": false
-            },
-            {
-              "id": "IA-3g",
-              "type": "failed_trial",
-              "label": "Systemic Immunosuppressant",
-              "detail": "Failed trial of a non-corticosteroid systemic immunosuppressant (cyclosporine, azathioprine, methotrexate, or mycophenolate mofetil).",
-              "exception": false
-            },
-            {
-              "id": "IA-3h",
-              "type": "contraindication_exception",
-              "label": "Exception: Contraindication to All Step Agents",
-              "detail": "Documented contraindications to all listed topical agents and systemic immunosuppressants, and documented inability to use phototherapy.",
-              "exception": true
-            }
-          ]
-        }
-      ]
-    },
-    "continuation_authorization": {
-      "logic": "ALL requirements must be met",
-      "requirements": [
-        {
-          "id": "CA-1",
-          "type": "clinical_response",
-          "label": "Demonstrated Clinical Response",
-          "required": true,
-          "detail": "Treatment has resulted in significant improvement or stabilization, including decrease in affected BSA, pruritus, or severity of inflammation, and/or improved quality of life."
-        }
-      ]
-    }
-  },
-  "quantity_limits": {
-    "note": "Limits are formulation- and age-dependent. Loading dose exception applies at initiation.",
-    "schedules": [
-      {
-        "formulation": "100 mg / 0.67 mL syringe",
-        "age_group": "All ages",
-        "limit": "2 per 28 days"
-      },
-      {
-        "formulation": "200 mg / 1.14 mL pre-filled syringe or pen",
-        "age_group": "Age ≤ 11 years",
-        "limit": "1 per 28 days"
-      },
-      {
-        "formulation": "200 mg / 1.14 mL pre-filled syringe or pen",
-        "age_group": "Age ≥ 12 years",
-        "limit": "2 per 28 days"
-      },
-      {
-        "formulation": "300 mg / 2 mL pre-filled syringe or pen",
-        "age_group": "Age ≤ 11 years",
-        "limit": "1 per 28 days"
-      },
-      {
-        "formulation": "300 mg / 2 mL pre-filled syringe or pen",
-        "age_group": "Age ≥ 12 years",
-        "limit": "2 per 28 days"
-      }
-    ],
-    "loading_dose_override": "For atopic dermatitis in patients age ≥ 6 years, 2 additional 200 mg or 300 mg pre-filled syringes/pens may be dispensed in the first month of therapy."
-  },
-  "exclusions": [
-    "Not approved in combination with oral or topical JAK inhibitors.",
-    "Not approved in combination with systemic immunosuppressants (cyclosporine, azathioprine, mycophenolate mofetil, methotrexate).",
-    "Not approved in combination with ensifentrine, tralokinumab, reslizumab, benralizumab, lebrikizumab, nemolizumab, mepolizumab, tezepelumab, or omalizumab."
-  ],
-  "documentation_checklist": [
-    "Confirmed diagnosis of moderate to severe atopic dermatitis.",
-    "Patient age documented as at least 6 months.",
-    "Chart documentation of prior treatment failure for at least one qualifying agent.",
-    "If exception pathway: documented contraindications to all step agents and inability to use phototherapy.",
-    "For continuation: documented clinical improvement or stabilization."
-  ]
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GreenLight PA — EHR Integration Demo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gl-green:        #0A6E55;
+    --gl-green-light:  #E6F4F0;
+    --gl-green-mid:    #C2E0D8;
+    --gl-teal-accent:  #0D9E7A;
+    --bg-shell:        #EAECF0;
+    --bg-panel:        #FFFFFF;
+    --bg-section:      #F8F9FB;
+    --text-primary:    #111827;
+    --text-secondary:  #4B5563;
+    --text-muted:      #9CA3AF;
+    --border:          #E5E7EB;
+    --border-strong:   #D1D5DB;
+    --required:        #B45309;
+    --required-bg:     #FFFBEB;
+    --step-bg:         #F0FDF4;
+    --step-border:     #BBF7D0;
+    --exception-bg:    #FFF7ED;
+    --exception-border:#FED7AA;
+    --shadow-sm:       0 1px 3px rgba(0,0,0,0.07), 0 1px 2px rgba(0,0,0,0.04);
+    --radius:          10px;
+    --radius-sm:       6px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'IBM Plex Sans', sans-serif;
+    background: var(--bg-shell);
+    color: var(--text-primary);
+    min-height: 100vh;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  /* ── EHR SHELL ───────────────────────────────────── */
+  .ehr-topbar {
+    background: #1C2333;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    gap: 12px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .ehr-brand   { color: #9CA3AF; font-size: 11px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; }
+  .ehr-sep     { color: #374151; }
+  .ehr-module  { color: #E5E7EB; font-size: 12px; }
+  .ehr-patient { margin-left: auto; display: flex; align-items: center; gap: 8px; }
+  .patient-name{ color: #F9FAFB; font-size: 13px; font-weight: 500; }
+  .patient-meta{ color: #6B7280; font-size: 12px; }
+  .patient-dot {
+    width: 28px; height: 28px; border-radius: 50%;
+    background: #374151; border: 1px solid #4B5563;
+    display: flex; align-items: center; justify-content: center;
+    color: #9CA3AF; font-size: 11px; font-weight: 600;
+  }
+  .ehr-subbar {
+    background: #252F42; height: 36px;
+    display: flex; align-items: center; padding: 0 20px;
+    border-bottom: 1px solid #1C2333;
+  }
+  .ehr-tab {
+    color: #6B7280; font-size: 12px; padding: 0 14px; height: 36px;
+    display: flex; align-items: center; cursor: default;
+    border-bottom: 2px solid transparent;
+  }
+  .ehr-tab.active { color: #F9FAFB; border-bottom-color: var(--gl-teal-accent); }
+
+  /* ── LAYOUT ─────────────────────────────────────── */
+  .shell-body {
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: 0;
+    height: calc(100vh - 82px);
+    overflow: hidden;
+  }
+
+  /* ── LEFT: ORDER PANE ────────────────────────────── */
+  .ehr-order-pane {
+    background: var(--bg-panel);
+    border-right: 1px solid var(--border);
+    overflow-y: auto;
+    padding: 24px 28px;
+  }
+  .order-section-label {
+    font-size: 10px; font-weight: 600; letter-spacing: .1em;
+    text-transform: uppercase; color: var(--text-muted);
+    margin-bottom: 14px; padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+  .chart-fields  { display: grid; gap: 12px; margin-bottom: 24px; }
+  .chart-field   { display: flex; flex-direction: column; gap: 4px; }
+  .field-label   { font-size: 11px; font-weight: 500; color: var(--text-secondary); text-transform: uppercase; letter-spacing: .06em; }
+  .field-value   { background: var(--bg-section); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 8px 12px; font-size: 13px; }
+  .field-value.populated { background: #F0FDF9; border-color: #A7F3D0; color: #065F46; display: flex; align-items: center; gap: 8px; }
+  .auto-badge    { font-size: 9px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; background: #D1FAE5; color: #065F46; padding: 2px 6px; border-radius: 3px; flex-shrink: 0; }
+  .order-drug-card {
+    background: var(--gl-green-light); border: 1.5px solid var(--gl-green-mid);
+    border-radius: var(--radius); padding: 14px 16px; margin-bottom: 24px;
+    display: flex; align-items: center; gap: 14px;
+  }
+  .drug-icon { width: 36px; height: 36px; border-radius: 8px; background: var(--gl-green); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .drug-icon svg { width: 18px; height: 18px; fill: white; }
+  .drug-brand  { font-size: 15px; font-weight: 600; color: var(--gl-green); }
+  .drug-generic{ font-size: 12px; color: #047857; margin-top: 1px; }
+  .drug-trigger-badge { font-size: 10px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; background: var(--gl-green); color: white; padding: 3px 8px; border-radius: 4px; white-space: nowrap; }
+  .trigger-notice {
+    display: flex; align-items: flex-start; gap: 10px;
+    background: #FFFBEB; border: 1px solid #FDE68A;
+    border-radius: var(--radius-sm); padding: 10px 12px;
+    font-size: 12px; color: #92400E; margin-bottom: 24px;
+  }
+  .trigger-notice svg { width: 16px; height: 16px; fill: #D97706; flex-shrink: 0; margin-top: 1px; }
+  .ehr-note-area {
+    background: var(--bg-section); border: 1px solid var(--border);
+    border-radius: var(--radius-sm); padding: 12px;
+    font-size: 12.5px; color: var(--text-secondary);
+    line-height: 1.6; min-height: 90px;
+    font-family: 'IBM Plex Mono', monospace;
+  }
+
+  /* ── RIGHT: PA PANEL ─────────────────────────────── */
+  .pa-panel {
+    background: var(--bg-section); overflow-y: auto;
+    display: flex; flex-direction: column;
+    animation: slideIn .35s cubic-bezier(.22,1,.36,1) both;
+  }
+  @keyframes slideIn {
+    from { transform: translateX(24px); opacity: 0; }
+    to   { transform: translateX(0);    opacity: 1; }
+  }
+  .pa-header {
+    background: var(--gl-green); padding: 16px 20px;
+    display: flex; flex-direction: column; gap: 4px;
+    position: sticky; top: 0; z-index: 10;
+  }
+  .pa-header-row { display: flex; align-items: center; justify-content: space-between; }
+  .pa-wordmark   { display: flex; align-items: center; gap: 8px; }
+  .pa-dot {
+    width: 10px; height: 10px; border-radius: 50%;
+    background: #6EE7B7; box-shadow: 0 0 0 3px rgba(110,231,183,.25);
+    animation: pulse 2.4s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%,100% { box-shadow: 0 0 0 3px rgba(110,231,183,.25); }
+    50%      { box-shadow: 0 0 0 6px rgba(110,231,183,.1);  }
+  }
+  .pa-wordmark-text      { color: white; font-size: 13px; font-weight: 600; letter-spacing: .02em; }
+  .pa-wordmark-text span { color: #6EE7B7; }
+  .pa-live-badge         { font-size: 9px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: #065F46; background: #6EE7B7; padding: 2px 7px; border-radius: 3px; }
+  .pa-context-pills      { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 6px; }
+  .pa-pill               { font-size: 11px; color: rgba(255,255,255,.75); background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.18); padding: 2px 9px; border-radius: 20px; }
+  .pa-pill strong        { color: white; font-weight: 500; }
+
+  /* ── LOADING / ERROR ─────────────────────────────── */
+  .pa-loading {
+    flex: 1; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; gap: 12px;
+    color: var(--text-muted); font-size: 13px;
+  }
+  .spinner {
+    width: 28px; height: 28px; border-radius: 50%;
+    border: 2px solid var(--gl-green-mid);
+    border-top-color: var(--gl-green);
+    animation: spin .8s linear infinite;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .pa-error {
+    margin: 12px; background: #FEF2F2; border: 1px solid #FECACA;
+    border-radius: var(--radius); padding: 16px;
+    font-size: 12.5px; color: #991B1B; line-height: 1.6;
+  }
+
+  /* ── SECTIONS ─────────────────────────────────────── */
+  .pa-section { background: var(--bg-panel); margin: 8px; border-radius: var(--radius); box-shadow: var(--shadow-sm); overflow: hidden; }
+  .section-toggle {
+    width: 100%; background: none; border: none; cursor: pointer;
+    padding: 12px 16px; display: flex; align-items: center; gap: 10px;
+    text-align: left; font-family: inherit;
+    border-bottom: 1px solid var(--border);
+  }
+  .section-toggle:hover { background: var(--bg-section); }
+  .section-icon { width: 26px; height: 26px; border-radius: 6px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .section-icon svg { width: 14px; height: 14px; }
+  .icon-green { background: var(--gl-green-light); } .icon-green svg { fill: var(--gl-green); }
+  .icon-amber { background: #FFFBEB; }               .icon-amber svg { fill: #D97706; }
+  .icon-red   { background: #FEF2F2; }               .icon-red   svg { fill: #DC2626; }
+  .icon-blue  { background: #EFF6FF; }               .icon-blue  svg { fill: #2563EB; }
+  .section-title { font-size: 13px; font-weight: 600; color: var(--text-primary); flex: 1; }
+  .section-count { font-size: 11px; color: var(--text-muted); background: var(--bg-section); border: 1px solid var(--border); padding: 1px 7px; border-radius: 10px; }
+  .chevron { width: 16px; height: 16px; fill: var(--text-muted); transition: transform .2s; flex-shrink: 0; }
+  .section-toggle.open .chevron { transform: rotate(90deg); }
+  .section-body { padding: 14px 16px; display: flex; flex-direction: column; gap: 10px; }
+  .section-body.collapsed { display: none; }
+
+  /* ── CRITERIA ITEMS ──────────────────────────────── */
+  .criteria-item { border-radius: var(--radius-sm); border: 1px solid var(--border); overflow: hidden; }
+  .criteria-item-header { display: flex; align-items: flex-start; gap: 10px; padding: 10px 12px; background: var(--bg-section); }
+  .criteria-id { font-family: 'IBM Plex Mono', monospace; font-size: 10px; font-weight: 500; color: var(--text-muted); background: white; border: 1px solid var(--border); padding: 1px 5px; border-radius: 3px; white-space: nowrap; margin-top: 1px; flex-shrink: 0; }
+  .criteria-content { flex: 1; }
+  .criteria-label  { font-size: 13px; font-weight: 600; color: var(--text-primary); margin-bottom: 3px; }
+  .criteria-detail { font-size: 12px; color: var(--text-secondary); line-height: 1.55; }
+  .req-chip        { font-size: 9px; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; padding: 2px 6px; border-radius: 3px; flex-shrink: 0; margin-top: 2px; }
+  .req-chip.required { background: var(--required-bg); color: var(--required); border: 1px solid #FDE68A; }
+
+  /* Step therapy OR block */
+  .step-or-block   { border-top: 1px solid var(--border); background: white; padding: 10px 12px; }
+  .step-or-label   { font-size: 10px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 8px; }
+  .step-options    { display: flex; flex-direction: column; gap: 5px; }
+  .step-option     { display: flex; align-items: flex-start; gap: 8px; padding: 7px 10px; border-radius: 5px; background: var(--step-bg); border: 1px solid var(--step-border); font-size: 12px; color: #065F46; }
+  .step-option.exception { background: var(--exception-bg); border-color: var(--exception-border); color: #92400E; }
+  .step-option-id  { font-family: 'IBM Plex Mono', monospace; font-size: 10px; color: var(--text-muted); flex-shrink: 0; margin-top: 1px; }
+  .step-option-text{ flex: 1; line-height: 1.45; }
+  .step-or-divider { text-align: center; font-size: 10px; font-weight: 700; color: var(--text-muted); letter-spacing: .06em; margin: 2px 0; }
+
+  /* ── QUANTITY TABLE ──────────────────────────────── */
+  .qty-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+  .qty-table th { text-align: left; font-size: 10px; font-weight: 600; letter-spacing: .07em; text-transform: uppercase; color: var(--text-muted); padding: 6px 10px; background: var(--bg-section); border-bottom: 1px solid var(--border); }
+  .qty-table td { padding: 8px 10px; border-bottom: 1px solid var(--border); color: var(--text-secondary); vertical-align: top; }
+  .qty-table tr:last-child td { border-bottom: none; }
+  .qty-table td:last-child { font-weight: 500; color: var(--text-primary); text-align: right; }
+  .qty-loading-note { margin-top: 8px; padding: 8px 10px; background: #EFF6FF; border: 1px solid #BFDBFE; border-radius: var(--radius-sm); font-size: 11.5px; color: #1D4ED8; display: flex; gap: 8px; align-items: flex-start; line-height: 1.5; }
+  .qty-loading-note svg { width: 14px; height: 14px; fill: #3B82F6; flex-shrink: 0; margin-top: 1px; }
+
+  /* ── EXCLUSIONS ──────────────────────────────────── */
+  .exclusion-item { display: flex; gap: 8px; align-items: flex-start; padding: 7px 0; border-bottom: 1px solid var(--border); font-size: 12.5px; color: var(--text-secondary); line-height: 1.5; }
+  .exclusion-item:last-child { border-bottom: none; }
+  .exclusion-item svg { width: 14px; height: 14px; fill: #DC2626; flex-shrink: 0; margin-top: 2px; }
+
+  /* ── DOCUMENTATION CHECKLIST ─────────────────────── */
+  .doc-item { display: flex; gap: 10px; align-items: flex-start; padding: 7px 0; border-bottom: 1px solid var(--border); font-size: 12.5px; color: var(--text-secondary); line-height: 1.5; }
+  .doc-item:last-child { border-bottom: none; }
+  .doc-checkbox { width: 16px; height: 16px; border-radius: 3px; border: 1.5px solid var(--border-strong); background: white; flex-shrink: 0; margin-top: 1px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all .15s; }
+  .doc-checkbox.checked { background: var(--gl-green); border-color: var(--gl-green); }
+  .doc-checkbox.checked::after { content: ''; display: block; width: 4px; height: 7px; border: 1.5px solid white; border-top: none; border-left: none; transform: rotate(45deg) translateY(-1px); }
+
+  /* ── FOOTER ──────────────────────────────────────── */
+  .pa-footer { margin: 8px; background: var(--bg-panel); border-radius: var(--radius); box-shadow: var(--shadow-sm); padding: 12px 16px; display: flex; flex-direction: column; gap: 8px; }
+  .footer-ref { display: flex; align-items: flex-start; gap: 8px; font-size: 11px; color: var(--text-secondary); line-height: 1.5; }
+  .footer-ref svg { width: 13px; height: 13px; fill: var(--text-muted); flex-shrink: 0; margin-top: 1px; }
+  .footer-ref a { color: var(--gl-green); text-decoration: none; font-weight: 500; }
+  .footer-ref a:hover { text-decoration: underline; }
+  .footer-divider { border: none; border-top: 1px solid var(--border); }
+  .footer-note { font-size: 11px; color: var(--text-muted); font-style: italic; line-height: 1.5; }
+  .footer-helsesoft { font-size: 10px; color: var(--text-muted); letter-spacing: .04em; text-align: right; }
+  .footer-helsesoft span { color: var(--gl-teal-accent); font-weight: 600; }
+</style>
+</head>
+<body>
+
+<!-- EHR TOP BAR -->
+<div class="ehr-topbar">
+  <span class="ehr-brand">Generic EHR</span>
+  <span class="ehr-sep">›</span>
+  <span class="ehr-module">Order Entry</span>
+  <div class="ehr-patient">
+    <div class="patient-dot">JD</div>
+    <span class="patient-name">Jane Doe</span>
+    <span class="patient-meta">· 34 yrs · Anthem BCBS CA</span>
+  </div>
+</div>
+
+<!-- EHR SUB NAV -->
+<div class="ehr-subbar">
+  <div class="ehr-tab">Summary</div>
+  <div class="ehr-tab">Chart</div>
+  <div class="ehr-tab active">Orders</div>
+  <div class="ehr-tab">Notes</div>
+  <div class="ehr-tab">Labs</div>
+</div>
+
+<!-- SHELL BODY -->
+<div class="shell-body">
+
+  <!-- LEFT: ORDER ENTRY -->
+  <div class="ehr-order-pane">
+    <div class="order-section-label">New Order — Biologic Therapy</div>
+
+    <div class="order-drug-card">
+      <div class="drug-icon">
+        <svg viewBox="0 0 24 24"><path d="M10.5 3a7.5 7.5 0 0 1 5.784 12.281l4.467 4.467-1.414 1.414-4.467-4.467A7.5 7.5 0 1 1 10.5 3Zm0 2a5.5 5.5 0 1 0 0 11 5.5 5.5 0 0 0 0-11Z"/></svg>
+      </div>
+      <div style="flex:1">
+        <div class="drug-brand">Dupixent (dupilumab)</div>
+        <div class="drug-generic">Biologic · IL-4/IL-13 inhibitor · HCPCS J3590</div>
+      </div>
+      <div class="drug-trigger-badge">PA Required</div>
+    </div>
+
+    <div class="chart-fields">
+      <div class="chart-field">
+        <div class="field-label">Indication</div>
+        <div class="field-value">Atopic Dermatitis — Moderate to Severe</div>
+      </div>
+      <div class="chart-field">
+        <div class="field-label">Insurance</div>
+        <div class="field-value populated">Anthem BCBS California <span class="auto-badge">from chart</span></div>
+      </div>
+      <div class="chart-field">
+        <div class="field-label">Patient Age</div>
+        <div class="field-value populated">34 years <span class="auto-badge">from chart</span></div>
+      </div>
+      <div class="chart-field">
+        <div class="field-label">Ordering Provider</div>
+        <div class="field-value">Dr. O. Jaren, MD — Dermatology</div>
+      </div>
+    </div>
+
+    <div class="trigger-notice">
+      <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 1 0 20A10 10 0 0 1 12 2Zm0 2a8 8 0 1 0 0 16A8 8 0 0 0 12 4Zm0 9a1 1 0 0 1 1 1v2a1 1 0 0 1-2 0v-2a1 1 0 0 1 1-1Zm0-5a1 1 0 1 1 0 2 1 1 0 0 1 0-2Z"/></svg>
+      GreenLight PA detected Dupixent + Anthem BCBS CA. Prior authorization criteria loaded automatically from insurer data.
+    </div>
+
+    <div class="order-section-label" style="margin-top:4px;">Preliminary Chart Note (auto-drafted)</div>
+    <div class="ehr-note-area" id="noteArea">Loading policy data…</div>
+  </div>
+
+  <!-- RIGHT: GREENLIGHT PA PANEL -->
+  <div class="pa-panel">
+
+    <div class="pa-header">
+      <div class="pa-header-row">
+        <div class="pa-wordmark">
+          <div class="pa-dot"></div>
+          <div class="pa-wordmark-text"><span>Green</span>Light PA</div>
+        </div>
+        <div class="pa-live-badge">Live</div>
+      </div>
+      <div class="pa-context-pills" id="contextPills">
+        <div class="pa-pill">Loading…</div>
+      </div>
+    </div>
+
+    <!-- Dynamic content renders here -->
+    <div id="paContent">
+      <div class="pa-loading">
+        <div class="spinner"></div>
+        <span>Fetching policy data…</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+// ── SVG ICONS ─────────────────────────────────────────
+const ICONS = {
+  check:   `<svg viewBox="0 0 24 24"><path d="M9 11.414 7.707 10.121 6.293 11.535l2.999 3 .708.707.707-.707 5-5-1.414-1.414L9 11.414Z"/><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2Zm0 2a8 8 0 1 1 0 16A8 8 0 0 1 12 4Z"/></svg>`,
+  clock:   `<svg viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2Zm0 2a8 8 0 1 1 0 16A8 8 0 0 1 12 4Zm1 4v5.586l3.707 3.707-1.414 1.414L11 13.414V8h2Z"/></svg>`,
+  warning: `<svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 1 0 20A10 10 0 0 1 12 2Zm0 2a8 8 0 1 0 0 16A8 8 0 0 0 12 4Zm0 9a1 1 0 0 1 1 1v2a1 1 0 0 1-2 0v-2a1 1 0 0 1 1-1Zm0-5a1 1 0 1 1 0 2 1 1 0 0 1 0-2Z"/></svg>`,
+  block:   `<svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 1 0 20A10 10 0 0 1 12 2Zm0 2a8 8 0 1 0 0 16A8 8 0 0 0 12 4Zm4.293 4.293 1.414 1.414-10 10-1.414-1.414 10-10Z"/></svg>`,
+  doc:     `<svg viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2V3H9v2Zm0 2h6v2H9V7Zm-2 4h10v2H7v-2Zm0 4h7v2H7v-2Z"/></svg>`,
+  info:    `<svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 1 0 20A10 10 0 0 1 12 2Zm0 2a8 8 0 1 0 0 16A8 8 0 0 0 12 4Zm0 9a1 1 0 0 1 1 1v2a1 1 0 0 1-2 0v-2a1 1 0 0 1 1-1Zm0-5a1 1 0 1 1 0 2 1 1 0 0 1 0-2Z"/></svg>`,
+  file:    `<svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6Zm-1 1.5L18.5 9H13V3.5ZM6 4h5v7h7v9H6V4Z"/></svg>`,
+  chevron: `<svg class="chevron" viewBox="0 0 24 24"><path d="M8.59 16.59 13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41Z"/></svg>`,
+};
+
+// ── TOGGLE HELPERS ─────────────────────────────────────
+function toggleSection(btn) {
+  btn.classList.toggle('open');
+  btn.nextElementSibling.classList.toggle('collapsed');
 }
+function toggleCheck(el) { el.classList.toggle('checked'); }
+
+// ── RENDER FUNCTIONS ───────────────────────────────────
+function renderContextPills(policy) {
+  return `
+    <div class="pa-pill"><strong>${policy.drug.brand_name}</strong> · ${policy.drug.generic_name}</div>
+    <div class="pa-pill"><strong>${policy.insurer}</strong> · ${policy.state}</div>
+    <div class="pa-pill">${policy.indication}</div>
+    <div class="pa-pill">Policy ${policy.policy_number}</div>
+  `;
+}
+
+function renderRequirement(req) {
+  if (req.type === 'step_therapy') {
+    const opts = req.options.map((opt, i) => {
+      const divider = i < req.options.length - 1
+        ? `<div class="step-or-divider">or</div>` : '';
+      return `
+        <div class="step-option${opt.exception ? ' exception' : ''}">
+          <span class="step-option-id">${opt.id.replace('IA-','')}</span>
+          <span class="step-option-text">${opt.exception ? '<strong>Exception:</strong> ' : ''}${opt.detail}</span>
+        </div>${divider}`;
+    }).join('');
+    return `
+      <div class="criteria-item">
+        <div class="criteria-item-header">
+          <span class="criteria-id">${req.id}</span>
+          <div class="criteria-content">
+            <div class="criteria-label">${req.label}</div>
+            <div class="criteria-detail">Documentation of prior therapy failure or valid exception.</div>
+          </div>
+          <span class="req-chip required">Required</span>
+        </div>
+        <div class="step-or-block">
+          <div class="step-or-label">One of the following must be documented</div>
+          <div class="step-options">${opts}</div>
+        </div>
+      </div>`;
+  }
+  return `
+    <div class="criteria-item">
+      <div class="criteria-item-header">
+        <span class="criteria-id">${req.id}</span>
+        <div class="criteria-content">
+          <div class="criteria-label">${req.label}</div>
+          <div class="criteria-detail">${req.detail}</div>
+        </div>
+        <span class="req-chip required">Required</span>
+      </div>
+    </div>`;
+}
+
+function renderInitialAuth(block) {
+  const reqs = block.requirements.map(renderRequirement).join('');
+  return `
+    <div class="pa-section">
+      <button class="section-toggle open" onclick="toggleSection(this)">
+        <div class="section-icon icon-green">${ICONS.check}</div>
+        <span class="section-title">Initial Authorization</span>
+        <span class="section-count">${block.requirements.length} requirements</span>
+        ${ICONS.chevron}
+      </button>
+      <div class="section-body">${reqs}</div>
+    </div>`;
+}
+
+function renderContinuationAuth(block) {
+  const reqs = block.requirements.map(renderRequirement).join('');
+  return `
+    <div class="pa-section">
+      <button class="section-toggle open" onclick="toggleSection(this)">
+        <div class="section-icon icon-blue">${ICONS.clock}</div>
+        <span class="section-title">Continuation Authorization</span>
+        <span class="section-count">${block.requirements.length} requirement</span>
+        ${ICONS.chevron}
+      </button>
+      <div class="section-body">${reqs}</div>
+    </div>`;
+}
+
+function renderQuantityLimits(ql) {
+  const rows = ql.schedules.map(s => `
+    <tr>
+      <td>${s.formulation}</td>
+      <td>${s.age_group}</td>
+      <td>${s.limit}</td>
+    </tr>`).join('');
+  return `
+    <div class="pa-section">
+      <button class="section-toggle open" onclick="toggleSection(this)">
+        <div class="section-icon icon-amber">${ICONS.warning}</div>
+        <span class="section-title">Quantity Limits</span>
+        <span class="section-count">${ql.schedules.length} schedules</span>
+        ${ICONS.chevron}
+      </button>
+      <div class="section-body">
+        <table class="qty-table">
+          <thead><tr><th>Formulation</th><th>Age Group</th><th>Limit</th></tr></thead>
+          <tbody>${rows}</tbody>
+        </table>
+        <div class="qty-loading-note">
+          ${ICONS.info}
+          <span><strong>Loading dose:</strong> ${ql.loading_dose_override}</span>
+        </div>
+      </div>
+    </div>`;
+}
+
+function renderExclusions(exclusions) {
+  const items = exclusions.map(e => `
+    <div class="exclusion-item">${ICONS.block}${e}</div>`).join('');
+  return `
+    <div class="pa-section">
+      <button class="section-toggle" onclick="toggleSection(this)">
+        <div class="section-icon icon-red">${ICONS.block}</div>
+        <span class="section-title">Concurrent Use Exclusions</span>
+        <span class="section-count">${exclusions.length}</span>
+        ${ICONS.chevron}
+      </button>
+      <div class="section-body collapsed">${items}</div>
+    </div>`;
+}
+
+function renderChecklist(items) {
+  const rows = items.map(item => `
+    <div class="doc-item">
+      <div class="doc-checkbox" onclick="toggleCheck(this)"></div>
+      <span>${item}</span>
+    </div>`).join('');
+  return `
+    <div class="pa-section">
+      <button class="section-toggle" onclick="toggleSection(this)">
+        <div class="section-icon icon-green">${ICONS.doc}</div>
+        <span class="section-title">Documentation Checklist</span>
+        <span class="section-count">${items.length} items</span>
+        ${ICONS.chevron}
+      </button>
+      <div class="section-body collapsed">${rows}</div>
+    </div>`;
+}
+
+function renderFooter(policy) {
+  return `
+    <div class="pa-footer">
+      <div class="footer-ref">
+        ${ICONS.file}
+        <span>Source policy: <a href="${policy.source_url}" target="_blank">${policy.insurer} ${policy.policy_number} — ${policy.drug.brand_name} (${policy.drug.generic_name})</a>, effective ${policy.effective_date}.</span>
+      </div>
+      <hr class="footer-divider">
+      <div class="footer-note">Authorization duration is not specified in this policy for the atopic dermatitis indication. Clinical judgment and insurer renewal cadence apply at continuation.</div>
+      <div class="footer-helsesoft">Powered by <span>GreenLight PA</span> · Helsesoft LLC</div>
+    </div>`;
+}
+
+function renderChartNote(data) {
+  const drug   = data.policy.drug.brand_name;
+  const ind    = data.policy.indication.toLowerCase();
+  const ins    = data.policy.insurer;
+  const policy = data.policy.policy_number;
+  const ia     = data.criteria.initial_authorization;
+  const reqs   = ia.requirements.map(r => r.label).join(', ');
+  return `Patient is a 34-year-old with moderate-to-severe ${ind}. Requesting ${drug} (${data.policy.drug.generic_name}) therapy. Coverage criteria per ${ins} policy ${policy}: ${reqs}.`;
+}
+
+// ── MAIN FETCH + RENDER ────────────────────────────────
+async function loadPolicy() {
+  try {
+    const res = await fetch('./dupixent-anthem-ca.json');
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const data = await res.json();
+
+    // Populate context pills
+    document.getElementById('contextPills').innerHTML = renderContextPills(data.policy);
+
+    // Populate chart note
+    document.getElementById('noteArea').textContent = renderChartNote(data);
+
+    // Render PA panel
+    document.getElementById('paContent').innerHTML =
+      renderInitialAuth(data.criteria.initial_authorization) +
+      renderContinuationAuth(data.criteria.continuation_authorization) +
+      renderQuantityLimits(data.quantity_limits) +
+      renderExclusions(data.exclusions) +
+      renderChecklist(data.documentation_checklist) +
+      renderFooter(data.policy);
+
+  } catch (err) {
+    document.getElementById('paContent').innerHTML = `
+      <div class="pa-error">
+        <strong>Could not load policy data.</strong><br>
+        Make sure <code>dupixent-anthem-ca.json</code> is in the same directory as this file.<br><br>
+        <em>Error: ${err.message}</em>
+      </div>`;
+  }
+}
+
+loadPolicy();
+</script>
+</body>
+</html>
