@@ -1,0 +1,159 @@
+{
+  "api_version": "1.0",
+  "data_source": "GreenLight PA — Helsesoft LLC",
+  "policy": {
+    "drug": {
+      "brand_name": "Dupixent",
+      "generic_name": "dupilumab",
+      "hcpcs_codes": ["J3590", "C9399"]
+    },
+    "indication": "Atopic Dermatitis",
+    "insurer": "Anthem BCBS",
+    "state": "CA",
+    "policy_number": "CC-0029",
+    "effective_date": "2025-09-10",
+    "last_revised": "2025-08-15",
+    "source_url": "https://www.anthem.com/content/dam/digital/docs/pharmacy-information/clinical-criteria/Dupixent.pdf"
+  },
+  "criteria": {
+    "initial_authorization": {
+      "logic": "ALL requirements must be met",
+      "requirements": [
+        {
+          "id": "IA-1",
+          "type": "age",
+          "label": "Minimum Age",
+          "required": true,
+          "detail": "Patient must be 6 months of age or older."
+        },
+        {
+          "id": "IA-2",
+          "type": "diagnosis",
+          "label": "Confirmed Diagnosis",
+          "required": true,
+          "detail": "Documented diagnosis of moderate to severe atopic dermatitis."
+        },
+        {
+          "id": "IA-3",
+          "type": "step_therapy",
+          "label": "Prior Treatment Requirement",
+          "required": true,
+          "logic": "ONE of the following must be documented",
+          "options": [
+            {
+              "id": "IA-3a",
+              "type": "failed_trial",
+              "label": "Topical Calcineurin Inhibitor",
+              "detail": "Failed trial of a topical calcineurin inhibitor (e.g., tacrolimus, pimecrolimus).",
+              "exception": false
+            },
+            {
+              "id": "IA-3b",
+              "type": "failed_trial",
+              "label": "Eucrisa (crisaborole)",
+              "detail": "Failed trial of Eucrisa.",
+              "exception": false
+            },
+            {
+              "id": "IA-3c",
+              "type": "failed_trial",
+              "label": "Opzelura (ruxolitinib cream)",
+              "detail": "Failed trial of Opzelura.",
+              "exception": false
+            },
+            {
+              "id": "IA-3d",
+              "type": "failed_trial",
+              "label": "Zoryve 0.15% Cream (roflumilast)",
+              "detail": "Failed trial of Zoryve 0.15% Cream.",
+              "exception": false
+            },
+            {
+              "id": "IA-3e",
+              "type": "failed_trial",
+              "label": "Vtama Cream (tapinarof)",
+              "detail": "Failed trial of Vtama Cream.",
+              "exception": false
+            },
+            {
+              "id": "IA-3f",
+              "type": "failed_trial",
+              "label": "Phototherapy (UVB or PUVA)",
+              "detail": "Failed trial of phototherapy.",
+              "exception": false
+            },
+            {
+              "id": "IA-3g",
+              "type": "failed_trial",
+              "label": "Systemic Immunosuppressant",
+              "detail": "Failed trial of a non-corticosteroid systemic immunosuppressant (cyclosporine, azathioprine, methotrexate, or mycophenolate mofetil).",
+              "exception": false
+            },
+            {
+              "id": "IA-3h",
+              "type": "contraindication_exception",
+              "label": "Exception: Contraindication to All Step Agents",
+              "detail": "Documented contraindications to all listed topical agents and systemic immunosuppressants, and documented inability to use phototherapy.",
+              "exception": true
+            }
+          ]
+        }
+      ]
+    },
+    "continuation_authorization": {
+      "logic": "ALL requirements must be met",
+      "requirements": [
+        {
+          "id": "CA-1",
+          "type": "clinical_response",
+          "label": "Demonstrated Clinical Response",
+          "required": true,
+          "detail": "Treatment has resulted in significant improvement or stabilization, including decrease in affected BSA, pruritus, or severity of inflammation, and/or improved quality of life."
+        }
+      ]
+    }
+  },
+  "quantity_limits": {
+    "note": "Limits are formulation- and age-dependent. Loading dose exception applies at initiation.",
+    "schedules": [
+      {
+        "formulation": "100 mg / 0.67 mL syringe",
+        "age_group": "All ages",
+        "limit": "2 per 28 days"
+      },
+      {
+        "formulation": "200 mg / 1.14 mL pre-filled syringe or pen",
+        "age_group": "Age ≤ 11 years",
+        "limit": "1 per 28 days"
+      },
+      {
+        "formulation": "200 mg / 1.14 mL pre-filled syringe or pen",
+        "age_group": "Age ≥ 12 years",
+        "limit": "2 per 28 days"
+      },
+      {
+        "formulation": "300 mg / 2 mL pre-filled syringe or pen",
+        "age_group": "Age ≤ 11 years",
+        "limit": "1 per 28 days"
+      },
+      {
+        "formulation": "300 mg / 2 mL pre-filled syringe or pen",
+        "age_group": "Age ≥ 12 years",
+        "limit": "2 per 28 days"
+      }
+    ],
+    "loading_dose_override": "For atopic dermatitis in patients age ≥ 6 years, 2 additional 200 mg or 300 mg pre-filled syringes/pens may be dispensed in the first month of therapy."
+  },
+  "exclusions": [
+    "Not approved in combination with oral or topical JAK inhibitors.",
+    "Not approved in combination with systemic immunosuppressants (cyclosporine, azathioprine, mycophenolate mofetil, methotrexate).",
+    "Not approved in combination with ensifentrine, tralokinumab, reslizumab, benralizumab, lebrikizumab, nemolizumab, mepolizumab, tezepelumab, or omalizumab."
+  ],
+  "documentation_checklist": [
+    "Confirmed diagnosis of moderate to severe atopic dermatitis.",
+    "Patient age documented as at least 6 months.",
+    "Chart documentation of prior treatment failure for at least one qualifying agent.",
+    "If exception pathway: documented contraindications to all step agents and inability to use phototherapy.",
+    "For continuation: documented clinical improvement or stabilization."
+  ]
+}
