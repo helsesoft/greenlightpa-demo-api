@@ -22,12 +22,14 @@ Option 1 — Python (no install required):
 cd greenlight-pa-demo
 python3 -m http.server 8080
 # Open: http://localhost:8080
-Option 2 — Node.js:
 
-npx serve .
+Option 2 — Node.js: npx serve .
+
 Option 3 — GitHub Pages:
+
 The demo is hosted directly from this repository at:
-https://postweb21.github.io/greenlightpa_demo_api/
+https://postweb21.github.io/greenlightpa_demo_api/](https://helsesoft.github.io/greenliightpa-demo-api/
+
 
 JSON API Structure
 The data file is a self-contained JSON object. A production API would accept query parameters (drug, insurer, state, indication) and return the same structure. The key fields:
